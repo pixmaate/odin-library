@@ -114,7 +114,7 @@ addButton.addEventListener('click', (event) => {
         document.querySelector('#title').value,
         document.querySelector('#author').value,
         document.querySelector('#pages').value,
-        document.querySelector('#genre').value,
+        document.querySelector('#genre').selectedOptions[0].textContent,
         document.querySelector('#read').value
         );
     clearInputs();
