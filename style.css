@@ -17,7 +17,7 @@
 
 .oneBook {
     display: grid;
-    grid-template: 1fr / repeat(7, 1fr);
+    grid-template: 1fr / repeat(6, 1fr);
     align-items: center;
 }
 

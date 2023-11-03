@@ -24,18 +24,22 @@ function Book(title, author, pages, genre, haveRead) {
 function createBookText(object, key, docElement) {
     const bookText = document.createElement('p');
     const bookButton = document.createElement('button');
-    if (key === 'haveRead') {
+    if (key === 'bookID') {
+
+    }
+    else if (key === 'haveRead') {
         bookButton.textContent = object[key];
         bookButton.classList.add("readButton");
         bookButton.classList.add(bookBtnClass(bookButton));
-        changeRead(bookButton);
+        changeRead(bookButton, object);
         bookText.appendChild(bookButton);
+        docElement.appendChild(bookText);
+
     }
     else {
         bookText.textContent = object[key];
-        
+        docElement.appendChild(bookText);      
     };
-    docElement.appendChild(bookText);
 };
 
 function bookBtnClass(currentButton) {
@@ -62,21 +66,23 @@ function clearInputs() {
 };
 
 function resetBookList() {
-    bookListElement.innerHTML = '<div class="oneBook titleRow"><p>Id</p><p>Title</p><p>Author</p><p>Genre</p><p>Pages</p><p>HaveRead</p><p></p></div>';
+    bookListElement.innerHTML = '<div class="oneBook titleRow"><p>Title</p><p>Author</p><p>Genre</p><p>Pages</p><p>HaveRead</p><p></p></div>';
 }
 
-function changeRead(currentButton) {
+function changeRead(currentButton, object) {
     currentButton.addEventListener('click', (event) => {
         switch(currentButton.textContent) {
             case 'Yes':
                 currentButton.textContent = 'No';
                 currentButton.classList.add('notRead');
                 currentButton.classList.remove('yesRead');
+                object.haveRead = 'No';
                 break;
             case 'No':
                 currentButton.textContent = 'Yes';
                 currentButton.classList.add('yesRead');
                 currentButton.classList.remove('notRead');
+                object.haveRead = 'Yes';
                 break;
         };
     });    
