@@ -43,6 +43,23 @@
     align-items: center;
 }
 
+.yesRead {
+    background-color: #8B9D77;
+}
+
+.notRead {
+    background-color: #EDC5AB;
+}
+
+.readButton {
+    width: 70%;
+    border-radius: 25px;
+    border-width: 1px;
+    color: whitesmoke;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
 fieldset {
     border: none;
 }

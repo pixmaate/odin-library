@@ -23,9 +23,24 @@ function Book(title, author, pages, genre, haveRead) {
 
 function createBookText(object, key, docElement) {
     const bookText = document.createElement('p');
-    bookText.textContent = object[key];
+    const bookButton = document.createElement('button');
+    if (key === 'haveRead') {
+        bookButton.textContent = object[key];
+        bookButton.classList.add("readButton");
+        bookButton.classList.add(bookBtnClass(bookButton));
+        changeRead(bookButton);
+        bookText.appendChild(bookButton);
+    }
+    else {
+        bookText.textContent = object[key];
+        
+    };
     docElement.appendChild(bookText);
-}
+};
+
+function bookBtnClass(currentButton) {
+    return currentButton.textContent === 'Yes' ? 'yesRead' : 'notRead'
+};
 
 function createDeleteBtn(object, docElement) {
     const deleteButton = document.createElement('button');
@@ -49,6 +64,23 @@ function clearInputs() {
 function resetBookList() {
     bookListElement.innerHTML = '<div class="oneBook titleRow"><p>Id</p><p>Title</p><p>Author</p><p>Genre</p><p>Pages</p><p>HaveRead</p><p></p></div>';
 }
+
+function changeRead(currentButton) {
+    currentButton.addEventListener('click', (event) => {
+        switch(currentButton.textContent) {
+            case 'Yes':
+                currentButton.textContent = 'No';
+                currentButton.classList.add('notRead');
+                currentButton.classList.remove('yesRead');
+                break;
+            case 'No':
+                currentButton.textContent = 'Yes';
+                currentButton.classList.add('yesRead');
+                currentButton.classList.remove('notRead');
+                break;
+        };
+    });    
+};
 
 /// -----------------------
 /// SECTION DRAW FUNCTIONS
