@@ -84,15 +84,20 @@ function deleteBook(bookIndex) {
 
 
 function restoreBookID() {
-    for (const el of bookLibrary) {
-       if (bookLibrary.indexOf(el) === bookLibrary[bookLibrary.indexOf(el)].bookID) {
-       }
-       else {
-        bookID = bookLibrary.indexOf(el);
-        bookLibrary[bookID].bookID = bookID;
-        bookID += 1;
-       }
-    };
+    if (bookLibrary.length === 0) {
+        bookID = 0;
+    }
+    else {
+        for (const el of bookLibrary) {
+            if (bookLibrary.indexOf(el) === bookLibrary[bookLibrary.indexOf(el)].bookID) {
+            }
+            else {
+             bookID = bookLibrary.indexOf(el);
+             bookLibrary[bookID].bookID = bookID;
+             bookID += 1;
+            }
+         };
+    };    
 };
 
 
