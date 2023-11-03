@@ -15,6 +15,8 @@
     box-shadow: 2px 4px 4px 2px #217074;
 }
 
+
+
 .oneBook {
     display: grid;
     grid-template: 1fr / repeat(6, 1fr);
@@ -58,6 +60,15 @@
     color: whitesmoke;
     font-weight: 700;
     font-size: 1.2rem;
+}
+
+.deleteBtn {
+    background-color: #E7EAEF;
+    border-radius: 30%;
+    border-style: solid;
+    border-width: 3px;
+    width: 30%;
+    font-weight: 900;
 }
 
 fieldset {

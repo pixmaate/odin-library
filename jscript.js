@@ -47,16 +47,19 @@ function bookBtnClass(currentButton) {
 };
 
 function createDeleteBtn(object, docElement) {
+    const deleteButtonPara = document.createElement('p');
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete'
+    deleteButton.textContent = 'X'
     deleteButton.value = object.bookID;
+    deleteButton.classList.add('deleteBtn');
     deleteButton.addEventListener('click', (event) => {
         event.preventDefault();
         console.log(deleteButton.value);
         deleteBook(deleteButton.value);
         drawBooks();
     })
-    docElement.appendChild(deleteButton);
+    deleteButtonPara.appendChild(deleteButton);
+    docElement.appendChild(deleteButtonPara);
 }
 
 function clearInputs() {
