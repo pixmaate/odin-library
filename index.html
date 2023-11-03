@@ -10,7 +10,7 @@
 <body>
     <div class="mainWrapper">
         <div class="titleWrapper">
-            <h1>Your Personal Library</h1>
+            <h1>Your Minimalistic Library</h1>
         </div>
 
         <div class="addNewBookWrapper">
@@ -31,6 +31,8 @@
                         <option value="thriller">Thriller</option>
                         <option value="crime">Crime</option>
                         <option value="supernatural">Supernatural</option>
+                        <option value="crime">History</option>
+                        <option value="supernatural">Other</option>
                     </select>
                 </div>
                 <div>
@@ -39,7 +41,10 @@
                 </div>
                 <div>
                     <label for="read">Have you read it?</label>
-                    <input type="text" name="read" id="read">
+                    <select name="read" id="read">
+                        <option value="yesRead">Yes</option>
+                        <option value="noRead">No</option>
+                    </select>
                 </div>
                 <div>
                     <button id="addBookBtn">Add Book</button>
@@ -54,7 +59,7 @@
                 <p>Author</p>
                 <p>Genre</p>
                 <p>Pages</p>
-                <p>HaveRead</p>
+                <p>Have Read?</p>
                 <p></p>
             </div>  
         </div>

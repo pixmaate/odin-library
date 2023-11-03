@@ -49,6 +49,11 @@ fieldset {
 
 h1 {
     margin-bottom: 5%;
+    color: #217074;
+    border-bottom: solid;
+    border-color: #217074;
+    border-width: 1px;
+    padding: 0.5rem;
 }
 
 form {
