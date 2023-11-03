@@ -17,6 +17,10 @@ function Book(title, author, pages, genre, haveRead) {
     this.haveRead = haveRead;
 };
 
+Book.prototype.toggleRead = function() {
+    this.haveRead === 'Yes' ? this.haveRead = 'No' : this.haveRead = 'Yes'
+};
+
 /// ----------------------
 /// SECTION DOM MANIPULATE FUNCTIONS
 /// -----------------------
@@ -24,7 +28,7 @@ function Book(title, author, pages, genre, haveRead) {
 function createBookText(object, key, docElement) {
     const bookText = document.createElement('p');
     const bookButton = document.createElement('button');
-    if (key === 'bookID') {
+    if (key === 'bookID' || key === 'toggleRead') {
 
     }
     else if (key === 'haveRead') {
@@ -74,20 +78,8 @@ function resetBookList() {
 
 function changeRead(currentButton, object) {
     currentButton.addEventListener('click', (event) => {
-        switch(currentButton.textContent) {
-            case 'Yes':
-                currentButton.textContent = 'No';
-                currentButton.classList.add('notRead');
-                currentButton.classList.remove('yesRead');
-                object.haveRead = 'No';
-                break;
-            case 'No':
-                currentButton.textContent = 'Yes';
-                currentButton.classList.add('yesRead');
-                currentButton.classList.remove('notRead');
-                object.haveRead = 'Yes';
-                break;
-        };
+        object.toggleRead();
+        drawBooks();
     });    
 };
 
