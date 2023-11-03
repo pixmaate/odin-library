@@ -5,9 +5,70 @@
 .bookListWrapper {
     display: grid;
     grid-template: 1fr / 1fr;
+    width: 80%;
+    border-style: solid;
+    padding: 2rem;
+    border-radius: 5px;
+    border-color: #217074;
+    border-width: 0.1rem;
+    background-color: #E7EAEF;
 }
 
 .oneBook {
     display: grid;
     grid-template: 1fr / repeat(7, 1fr);
+    align-items: center;
+}
+
+.oneBook p {
+    text-align: center;
+}
+
+.oneBook p+p {
+    border-left: solid;
+    border-width: 2px;
+    border-color: #37745B;
+}
+
+.titleRow {
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #37745B;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset {
+    border: none;
+}
+
+h1 {
+    margin-bottom: 5%;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+form div {
+    display:flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mainWrapper {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }

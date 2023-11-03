@@ -46,12 +46,16 @@ function clearInputs() {
     });
 };
 
+function resetBookList() {
+    bookListElement.innerHTML = '<div class="oneBook titleRow"><p>Id</p><p>Title</p><p>Author</p><p>Genre</p><p>Pages</p><p>HaveRead</p><p></p></div>';
+}
+
 /// -----------------------
 /// SECTION DRAW FUNCTIONS
 /// -----------------------
 
 function drawBooks() {
-    bookListElement.innerHTML = '';
+    resetBookList();
     for (const el of bookLibrary) {
         const bookElement = document.createElement('div');
         bookListElement.appendChild(bookElement);
