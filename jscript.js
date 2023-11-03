@@ -22,12 +22,24 @@ function drawBooks() {
     for (const el of bookLibrary) {
         const bookElement = document.createElement('div');
         bookListElement.appendChild(bookElement);
+
         for (const element in el) {
             console.log(el[element]);
             const bookText = document.createElement('p');
             bookText.textContent = el[element];
             bookElement.appendChild(bookText);
         };
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete'
+        deleteButton.value = el.bookID;
+        deleteButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(deleteButton.value);
+            deleteBook(deleteButton.value);
+            drawBooks();
+        })
+        bookElement.appendChild(deleteButton);
     };
 };
 
@@ -36,6 +48,7 @@ function addBookToLib() {
     console.log(book);
     bookLibrary.push(book);
     bookID += 1;
+    drawBooks();
 }
 
 function deleteBook(bookIndex) {
