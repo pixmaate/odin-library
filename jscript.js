@@ -8,7 +8,7 @@ const bookLibrary = [];
 
 let bookID = 0;
 
-function Book(title, author, pages, genre, haveRead) {
+/*   function Book(title, author, pages, genre, haveRead) {
     this.bookID = bookID;
     this.title = title;
     this.author = author;
@@ -19,6 +19,22 @@ function Book(title, author, pages, genre, haveRead) {
 
 Book.prototype.toggleRead = function() {
     this.haveRead === 'Yes' ? this.haveRead = 'No' : this.haveRead = 'Yes'
+};*/
+
+class Book {
+    constructor (title, author, pages, genre, haveRead) {
+        this.bookID = bookID;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.pages = pages;
+        this.haveRead = haveRead;
+    }
+
+    toggleRead() {
+        this.haveRead === 'Yes' ? this.haveRead = 'No' : this.haveRead = 'Yes' 
+    }
+
 };
 
 /// ----------------------
